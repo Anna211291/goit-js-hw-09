@@ -16,3 +16,16 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.btns-style {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 300px;
+}
+.btn {
+  width: 150px;
+  font-size: 30px;
+  background-color: white;
+  border-radius: 2rem;
+}
