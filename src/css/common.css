@@ -16,7 +16,7 @@ img {
   display: block;
   max-width: 100%;
 }
-
+/* color-switcher */
 .btns-style {
   display: flex;
   gap: 20px;
@@ -28,4 +28,35 @@ img {
   font-size: 30px;
   background-color: white;
   border-radius: 2rem;
+}
+/* timer */
+.select-date {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  background: linear-gradient(rgba(0, 212, 255, 1) 0%, rgba(2, 0, 36, 1) 100%);
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  padding: 100px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.value {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+}
+.label {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
 }
