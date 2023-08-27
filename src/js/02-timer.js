@@ -23,6 +23,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+
   }
 };
 
@@ -70,7 +71,14 @@ function hendlerClick() {
   interval = setInterval(() => {
     const countTime = targetDate - new Date();
     const countdown = convertMs(countTime);
-    updateTime(countdown)
+    updateTime(countdown);
+
+    if(countTime <= 0) {
+            clearInterval(interval)
+            updateTime({days: 0, hours: 0, minutes: 0, seconds: 0})
+            return
+    }
+    elements.btnStart.removeEventListener("click", hendlerClick)
   }, 1000);
 
 }
