@@ -22,7 +22,6 @@ function hendlerClickOn() {
 }
 function hendlerClickOff() {
     clearInterval(timerId);
-    elements.bodyColor.style.backgroundColor = '#fff';
 elements.btnStart.disabled = false;
 elements.btnStop.disabled = true;
 }

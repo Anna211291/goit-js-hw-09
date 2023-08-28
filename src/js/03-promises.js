@@ -28,26 +28,29 @@ function hendlerSubmit(evt) {
   const inputDelay = Number(delay.value);
   const inputStep = Number(step.value);
   const inputAmount = Number(amount.value);
-
-  for (let i = 1; i <= inputAmount ; i += 1) {
+  let promisesCount = 0;
+  
+  for (let i = 1; i <= inputAmount; i += 1) {
     const position = i;
     const currentDelay = inputDelay + ((i - 1) * inputStep);
-let promisesCount = 0;
+
 function promisesAmount() {
   promisesCount += 1;
-  if (promisesCount = inputAmount) {
+  if (promisesCount === inputAmount) {
     btn.disabled = false;
-  }
-};
+  } 
+    };
+    
     createPromise(position, currentDelay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         promisesAmount();
-  })
-  .catch(({ position, delay }) => {
-    Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-    promisesAmount();
-  });
+      })
+      .catch(({ position, delay }) => {
+        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        promisesAmount();
+      })
   }
+  form.reset();
 };
 
